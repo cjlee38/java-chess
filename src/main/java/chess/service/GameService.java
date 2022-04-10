@@ -2,9 +2,9 @@ package chess.service;
 
 import java.util.List;
 
+import chess.database.GameStateGenerator;
 import chess.database.dao.BoardDao;
 import chess.database.dao.GameDao;
-import chess.database.GameStateGenerator;
 import chess.database.dto.BoardDto;
 import chess.database.dto.GameStateDto;
 import chess.database.dto.PointDto;

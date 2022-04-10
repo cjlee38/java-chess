@@ -4,21 +4,16 @@ import static org.assertj.core.api.Assertions.*;
 
 import java.util.List;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 
 import chess.database.dto.BoardDto;
 import chess.database.dto.GameStateDto;
 import chess.database.dto.PointDto;
 import chess.database.dto.RouteDto;
 import chess.domain.board.Board;
-import chess.domain.board.BoardGenerator;
 import chess.domain.board.InitialBoardGenerator;
 import chess.domain.board.Point;
 import chess.domain.board.Route;
