@@ -5,7 +5,7 @@
 1. docker-compose -p chess up -d
 2. docker exec -it chess_db_1 bash
 3. mysql -u root -proot
-4. /docker/db/init/chess.sql 의 SQL 실행
+4. /docker/db/mysql/init/chess.sql 의 SQL 실행
 
 ## 기능 구현 목록
 ### 1단계
