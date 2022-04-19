@@ -36,8 +36,8 @@ public class GameService {
     private void validateDistinctGame(String roomName) {
         try {
             gameDao.readStateAndColor(roomName);
-        } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException(String.format("[ERROR] %s 이름의 방이 이미 존재합니다.", roomName));
+        } catch (IllegalArgumentException ignored) {
         }
     }
 
