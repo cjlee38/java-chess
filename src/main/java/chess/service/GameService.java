@@ -27,14 +27,18 @@ public class GameService {
     }
 
     public void createNewGame(String roomName) {
-        if (gameDao.readStateAndColor(roomName) != null) {
-            throw new IllegalArgumentException(String.format("[ERROR] %s 이름의 방이 이미 존재합니다.", roomName));
-        }
-
+        validateDistinctGame(roomName);
         GameState state = new Ready();
-
         gameDao.saveGame(GameStateDto.of(state), roomName);
         boardDao.saveBoard(BoardDto.of(state.getPointPieces()), roomName);
+    }
+
+    private void validateDistinctGame(String roomName) {
+        try {
+            gameDao.readStateAndColor(roomName);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(String.format("[ERROR] %s 이름의 방이 이미 존재합니다.", roomName));
+        }
     }
 
     public void startGame(String roomName) {
